@@ -7,133 +7,133 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #edf2fa;
-                <!--#0f172a;-->
+            background-color: #0f172a;
+            color: white;
+            overflow: hidden; /* Strict no-scroll */
         }
-        .spectrum-gradient {
-            background: linear-gradient(135deg, #879ac9 0%, #7928ca 50%, #0070f3 100%);
-        }
-        .text-gradient {
-            background: linear-gradient(135deg, #ff0080 0%, #7928ca 50%, #0070f3 100%);
+        .gradient-text {
+            background: linear-gradient(90deg, #ff00cc, #3333ff, #00d4ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .gradient-border {
+            border: 2px solid transparent;
+            background-image: linear-gradient(#0f172a, #0f172a), linear-gradient(90deg, #ff00cc, #3333ff, #00d4ff);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
         }
-        .border-gradient {
-            border: 2px solid;
-            border-image-source: linear-gradient(135deg, #ff0080 0%, #7928ca 50%, #0070f3 100%);
-            border-image-slice: 1;
+        .speaker-card {
+            transition: transform 0.3s ease;
+        }
+        .speaker-card:hover {
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
+<body class="h-screen w-screen flex items-center justify-center p-2 sm:p-4">
 
     <!-- Flyer Container -->
-    <div class="max-w-4xl w-full bg-slate-900 shadow-2xl overflow-hidden rounded-3xl relative">
+    <div class="max-w-4xl w-full h-full max-h-[98vh] bg-slate-900 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 relative flex flex-col">
         
-        <!-- Top Accent Bar -->
-        <div class="h-3 spectrum-gradient"></div>
+        <!-- Decorative background glow -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-purple-600/10 blur-[100px] rounded-full"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-blue-600/10 blur-[100px] rounded-full"></div>
 
-        <div class="p-8 md:p-12">
-            <!-- Header Section -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
-                <div>
-                    <h2 class="text-pink-500 font-bold tracking-widest text-sm uppercase mb-1">Her AI Spectrum Show</h2>
-                    <p class="text-slate-400 text-xs italic">Hosted by her-ai-spectrum</p>
-                </div>
-                <div>
-                   <img src="Designer_HerAI.png" alt="Her AI Apectrum" width="100" height="25"> 
-                </div>
-                <div class="text-right">
-                    <span class="inline-block py-1 px-4 rounded-full border border-slate-700 text-slate-300 text-xs font-medium">
-                        Live Conversation + Product Demo
-                    </span>
-                </div>
-            </div>
+        <!-- Header / Logo Section -->
+        <div class="pt-4 px-6 flex flex-col items-center text-center shrink-0">
+            <img src="Designer (1).jpg" alt="Her AI Spectrum Logo" class="w-16 h-16 sm:w-20 sm:h-20 object-contain mb-2 rounded-full border-2 border-purple-500/50 p-1 bg-slate-800 shadow-lg">
+            
+            <p class="text-[9px] sm:text-xs font-semibold tracking-[0.2em] text-purple-400 uppercase mb-1">Her AI Spectrum Presents</p>
+            <h1 class="text-lg sm:text-2xl lg:text-3xl font-extrabold mb-1 leading-tight">
+                From Research to Real World: <br>
+                <span class="gradient-text">Building AI Solutions that Scale</span>
+            </h1>
+            <p class="text-slate-400 text-xs sm:text-sm max-w-lg mx-auto">
+                How AI research becomes real, scalable, human-centered products.
+            </p>
+        </div>
 
-            <!-- Title Section -->
-            <div class="mb-12">
-                <h1 class="text-2xl md:text-3xl font-extrabold text-white leading-tight mb-2">
-                    From Research to <span class="text-gradient"> Real World </span>
-                </h1>
-               <!-- 
-                <p class="text-xl md:text-2xl text-slate-300 font-light max-w-2xl">
-                    Building AI Solutions that Scale: How research becomes real, scalable, human-centered products.
-                </p> 
-                -->
-            </div>
-
-            <!-- Event Details Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-               <div class="glass-card p-4 rounded-2m">
-                    <p class="text-slate-500 text-xs uppercase tracking-wider mb-2">Date: Feb 20, 2026</p>
-                     <!--   <p class="text-white text-lg font-semibold">Feb 20, 2026</p> -->
-               </div>
-                 <div class="glass-card p-4 rounded-2m"> 
-                    <p class="text-slate-500 text-xs uppercase tracking-wider mb-2">Time: 10:00 - 11:00 AM(EST)</p>
-                     <!--<p class="text-white text-lg font-semibold">10:00 - 11:00 AM</p>-->
-               </div>  
-               <div class="glass-card p-4 rounded-2m"> 
-                    <p class="text-slate-500 text-xs uppercase tracking-wider mb-2">Duration: 1 Hour Session</p>
-                    <!--    <p class="text-white text-lg font-semibold">1 Hour Session</p> -->
-              </div> 
-            </div>
-
+        <!-- Main Content Grid -->
+        <div class="flex-grow grid md:grid-cols-2 gap-4 p-4 sm:p-6 items-center overflow-hidden">
+            
             <!-- Speakers Section -->
-            <div class="mb-12">
-                <h3 class="text-slate-500 text-xs uppercase tracking-widest font-bold mb-6 flex items-center">
-                    <span class="mr-4">Featuring Founders of Scholé AI</span>
-                    <div class="flex-grow h-px bg-slate-800"></div>
-                </h3>
+            <div class="space-y-2 sm:space-y-3">
+                <h3 class="text-xs sm:text-base font-bold border-l-4 border-blue-500 pl-3">Featured Speakers</h3>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Speaker 1 -->
-                    <div class="flex items-center space-x-4">
-                        <div class="w-16 h-12 rounded-full spectrum-gradient flex items-center justify-center text-white font-bold text-xl shrink-0">
-                             <img src="vini.jpg" alt="Vinitra Swamy"> 
-                        </div>
-                        <div>
-                            <h4 class="text-white text-xl font-bold">Vinitra Swamy</h4>
-                            <p class="text-slate-400 text-sm">Co-founder and CEO, Scholé AI</p>
-                        </div>
+                <!-- Vinitra -->
+                <div class="speaker-card flex items-center gap-3 bg-white/5 p-2 sm:p-3 rounded-xl border border-white/10">
+                    <img src="img/vini.jpg" alt="Vinitra Swamy" class="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-blue-500 shadow-md shrink-0">
+                    <div>
+                        <h4 class="font-bold text-xs sm:text-sm">Vinitra Swamy</h4>
+                        <p class="text-[9px] sm:text-xs text-slate-400 font-medium">Co-founder and CEO, Scholé AI</p>
                     </div>
+                </div>
 
-                    <!-- Speaker 2 -->
-                    <div class="flex items-center space-x-4">
-                        <div class="w-16 h-16 rounded-full spectrum-gradient flex items-center justify-center text-white font-bold text-xl shrink-0">
-                            <img src="img/paola.jpg" alt="Paola Mejía Domenzain"> 
-                        </div>
-                        <div>
-                            <h4 class="text-white text-xl font-bold">Paola Mejía Domenzain</h4>
-                            <p class="text-slate-400 text-sm">Co-founder and CTO, Scholé AI</p>
-                        </div>
+                <!-- Paola -->
+                <div class="speaker-card flex items-center gap-3 bg-white/5 p-2 sm:p-3 rounded-xl border border-white/10">
+                    <img src="img/paola.jpg" alt="Paola Mejía Domenzain" class="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-purple-500 shadow-md shrink-0">
+                    <div>
+                        <h4 class="font-bold text-xs sm:text-sm">Paola Mejía Domenzain</h4>
+                        <p class="text-[9px] sm:text-xs text-slate-400 font-medium">Co-founder and CTO, Scholé AI</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Footer & CTA -->
-            <div class="flex flex-col md:flex-row items-center justify-between border-t border-slate-800 pt-10 gap-8">
-                <!-- <div> -->
-                    <p class="text-white font-semibold text-lg">Her AI Spectrum</p>
-                    <p class="text-slate-400 text-sm italic">Where women shape the future of AI</p>
-                <!-- </div> -->
-                <a href="https://luma.com/z58ks2aq" class="spectrum-gradient text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg">
+            <!-- Event Details Section -->
+            <div class="gradient-border rounded-xl p-4 sm:p-5 space-y-3 bg-slate-800/50 flex flex-col justify-between h-full max-h-[220px] md:max-h-none">
+                <div class="space-y-2 sm:space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7 rounded bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-[8px] text-slate-500 uppercase font-bold">Date</p>
+                            <p class="font-semibold text-xs sm:text-sm">Feb 20, 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7 rounded bg-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-[8px] text-slate-500 uppercase font-bold">Time</p>
+                            <p class="font-semibold text-xs sm:text-sm text-white">10 - 11 a.m. EST</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-7 h-7 rounded bg-pink-500/20 flex items-center justify-center text-pink-400 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-[8px] text-slate-500 uppercase font-bold">Format</p>
+                            <p class="font-semibold text-xs sm:text-sm text-white">Live Conversation + Demo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <a href="https://luma.com/z58ks2aq" target="_blank" class="block text-center bg-gradient-to-r from-purple-600 to-blue-600 hover:brightness-110 text-white font-bold py-2 sm:py-3 px-4 rounded-lg transition shadow-lg shadow-purple-500/20 active:scale-95 text-xs sm:text-sm">
                     👉 Register / Save Your Spot
                 </a>
             </div>
         </div>
 
-        <!-- Decorative Elements -->
-        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-600 rounded-full blur-[100px] opacity-20"></div>
-        <div class="absolute -top-20 -right-20 w-64 h-64 bg-pink-600 rounded-full blur-[100px] opacity-20"></div>
+        <!-- Footer -->
+        <div class="bg-black/30 py-2 px-6 text-center border-t border-white/5 shrink-0">
+            <p class="text-slate-400 text-[9px] sm:text-xs italic">"Where women shape the future of AI"</p>
+        </div>
     </div>
 
 </body>
